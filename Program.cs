@@ -6,7 +6,7 @@
         {
             string name, firstName, lastName, userName, storeItems;
             int age, ID, grade;
-            double mone, average,num1, num2, num3, cost1, cost2;
+            double mone, average, num1, num2, num3, cost1, cost2, totalCost, discountCost, discount, tax, totalOwnd;
 
             //Console.WriteLine("Part 1: ");
             //Console.WriteLine();
@@ -72,19 +72,34 @@
             Console.WriteLine();
             Console.WriteLine("Sales Receipt");
             Console.WriteLine();
-            Console.WriteLine("Item #1: ");
+            Console.Write("Item #1: ");
             storeItems = Console.ReadLine();
-            Console.WriteLine("Price: ");
+            Console.Write("Price: ");
             cost1 = Convert.ToDouble(Console.ReadLine());
-            //cost1.ToString("C");
-            Console.WriteLine("Item #2: ");
+            Console.Write("Item #2: ");
             storeItems = Console.ReadLine();
-            Console.WriteLine("Price: ");
+            Console.Write("Price: ");
             cost2 = Convert.ToDouble(Console.ReadLine());
-            //cost2.ToString("C");
             Console.WriteLine("=====================");
-            Console.WriteLine("Total: ");
-            Console.WriteLine((cost1 + cost2).ToString("C"));
+            totalCost = (cost1 + cost2);
+            Console.Write("Total: ");
+            Console.WriteLine(totalCost.ToString("C"));
+            Console.Write("Discount (20%): ");
+            discount = (0.20 * totalCost);
+            Console.WriteLine(discount.ToString("C")) ;
+            discountCost = totalCost - discount;
+            Console.Write("Subtotal: ");
+            Console.WriteLine(discountCost.ToString("C"));
+            Console.Write("Tax (13%): ");
+            tax = discountCost * 0.13;
+            Console.WriteLine(tax.ToString("C"));
+            totalOwnd = discountCost + tax;
+            Console.WriteLine("=====================");
+            Console.Write("Total Ownd: ");
+            Console.WriteLine(totalOwnd.ToString("C"));
+
+
+            Console.ReadLine();
         }
     }
 }
